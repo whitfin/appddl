@@ -1,9 +1,9 @@
 [package]
-name = "app-dynamics-downloader"
+name = "appddl"
 version = "1.0.0"
 authors = ["Isaac Whitfield <iw@whitfin.io>"]
 description = "Small download tool to automate AppDynamics downloads."
-repository = "https://github.com/whitfin/app-dynamics-downloads"
+repository = "https://github.com/whitfin/appddl"
 keywords = ["app-dynamics", "appdynamics", "monitoring", "filesystem"]
 categories = ["command-line-utilities", "filesystem"]
 edition = "2018"

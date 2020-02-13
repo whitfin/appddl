@@ -1,0 +1,25 @@
+[package]
+name = "app-dynamics-downloader"
+version = "1.0.0"
+authors = ["Isaac Whitfield <iw@whitfin.io>"]
+description = "Small download tool to automate AppDynamics downloads."
+repository = "https://github.com/whitfin/app-dynamics-downloads"
+keywords = ["app-dynamics", "appdynamics", "monitoring", "filesystem"]
+categories = ["command-line-utilities", "filesystem"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+bytes = "0.5"
+clap = "2.33"
+futures = "0.3"
+hyper = { version = "0.13", features = ["stream"] }
+hyper-tls = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "0.2", features = ["full"] }
+
+[profile.release]
+codegen-units = 1
+opt-level = 3
+lto = true

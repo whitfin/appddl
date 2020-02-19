@@ -271,6 +271,9 @@ async fn download_file(
         file.write_all(&v?).await?;
     }
 
+    // sync all remaining data
+    file.sync_all().await?;
+
     // log for command line visibility to be helpful
     println!("{} downloaded successfully!", archive.name);
 

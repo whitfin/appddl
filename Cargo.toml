@@ -1,6 +1,6 @@
 [package]
 name = "appddl"
-version = "1.0.1"
+version = "1.1.0"
 authors = ["Isaac Whitfield <iw@whitfin.io>"]
 description = "Small download tool to automate AppDynamics downloads."
 repository = "https://github.com/whitfin/appddl"

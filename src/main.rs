@@ -16,6 +16,7 @@ use futures::stream::StreamExt as _;
 use hyper::client::HttpConnector;
 use hyper::{body, Body, Client, Method, Request, Uri};
 use hyper_tls::HttpsConnector;
+use regex::Regex;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use tokio::fs::File;
@@ -71,9 +72,12 @@ async fn main() -> AnyResult<()> {
 
     // search for the file archive in the list of available files
     let target = args.value_of("indicator").expect("already validated");
+    let regexp = Regex::new(&format!("^{}$", target))?;
+
+    // look for an archive
     let archive = files
         .iter()
-        .find(|archive| archive.name == target || archive.id.to_string() == target);
+        .find(|archive| regexp.is_match(&archive.name) || regexp.is_match(&archive.id.to_string()));
 
     // check we found one
     if archive.is_none() {

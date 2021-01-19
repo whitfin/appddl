@@ -10,7 +10,7 @@
 //!
 //! Although this repository was built to aid in Docker builds, you can run this
 //! tool manually if you have a Rust compiler.
-use bytes::buf::BufExt as _;
+use bytes::buf::Buf;
 use clap::{App, AppSettings, Arg, ArgMatches};
 use futures::stream::StreamExt as _;
 use hyper::client::HttpConnector;
@@ -20,7 +20,7 @@ use regex::Regex;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use tokio::fs::File;
-use tokio::prelude::*;
+use tokio::io::AsyncWriteExt;
 
 use std::env;
 use std::error::Error;

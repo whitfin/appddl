@@ -1,6 +1,6 @@
 # AppDynamics Downloader (appddl)
 
-[![Crates.io](https://img.shields.io/crates/v/appddl.svg)](https://crates.io/crates/appddl) [![Build Status](https://img.shields.io/travis/whitfin/appddl.svg)](https://travis-ci.org/whitfin/appddl)
+[![Crates.io](https://img.shields.io/crates/v/appddl.svg)](https://crates.io/crates/appddl) [![Build Status](https://img.shields.io/github/workflow/status/whitfin/appddl/CI)](https://github.com/whitfin/appddl/actions)
 
 Extremely small CLI tool used to download archives from AppDynamics.
 
